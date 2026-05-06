@@ -1,4 +1,4 @@
-class plant():
+class Plant():
     class __Stats:
         def __init__(self) -> None:
             self.grow_calls = 0
@@ -17,10 +17,10 @@ class plant():
         self._height = height
         self._age = age
         self._status = status
-        self._stats = plant.__Stats()
+        self._stats = Plant.__Stats()
 
     @classmethod
-    def anonymous(cls) -> "plant":
+    def anonymous(cls) -> "Plant":
         return cls("Unknown plant", 0.0, 0, "Anonymous")
 
     @staticmethod
@@ -46,7 +46,7 @@ class plant():
         self._age += 1
 
 
-class flower(plant):
+class Flower(Plant):
     def __init__(self, name: str, height: float, age: int,
                  color: str, status: str = "Flower") -> None:
         super().__init__(name, height, age, status)
@@ -73,7 +73,7 @@ class flower(plant):
             self.show()
 
 
-class Seed(flower):
+class Seed(Flower):
     def __init__(self, name: str, height: float, age: int,
                  color: str, seed_count: int) -> None:
         super().__init__(name, height, age, color, "Seed")
@@ -103,7 +103,7 @@ class Seed(flower):
             self.stats()
 
 
-class tree(plant):
+class Tree(Plant):
     def __init__(self, name: str, height: float, age: int,
                  trunk_diameter: float) -> None:
         super().__init__(name, height, age, "Tree")
@@ -131,7 +131,7 @@ class tree(plant):
             print(f"{self.__shade} shade")
 
 
-def display_stats(p: plant) -> None:
+def display_stats(p: Plant) -> None:
     p.stats()
 
 
@@ -139,15 +139,15 @@ if __name__ == "__main__":
     print("=== Garden statistics ===")
     print("=== Check year-old")
     age = 30
-    print(f"Is {age} days more than a year? -> {plant.older_year(age)}")
+    print(f"Is {age} days more than a year? -> {Plant.older_year(age)}")
     age = 400
-    print(f"Is {age} days more than a year? -> {plant.older_year(age)}")
+    print(f"Is {age} days more than a year? -> {Plant.older_year(age)}")
     print("")
-    rose = flower("Rose", 15.0, 10, "red")
+    rose = Flower("Rose", 15.0, 10, "red")
     rose.show()
     rose.bloom()
     print("")
-    oak = tree("Oak", 200.0, 365, 5.0)
+    oak = Tree("Oak", 200.0, 365, 5.0)
     oak.show()
     oak.produce_shade()
     oak.produce_shade()
@@ -156,5 +156,5 @@ if __name__ == "__main__":
     seed.show()
     seed.bloom()
     print("")
-    anon = plant.anonymous()
+    anon = Plant.anonymous()
     anon.show()

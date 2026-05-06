@@ -1,4 +1,4 @@
-class plant():
+class Plant():
     def __init__(self, name: str, height: float, age: int) -> None:
         self._name = name
         self._height = height
@@ -33,9 +33,9 @@ class plant():
             )
 
 
-def input_plant(name: str, height: float, age: int) -> plant:
+def input_plant(name: str, height: float, age: int) -> Plant:
     print(f"Created: {name}: {height}cm, {age} days old")
-    return plant(name, height, age)
+    return Plant(name, height, age)
 
 
 if __name__ == "__main__":

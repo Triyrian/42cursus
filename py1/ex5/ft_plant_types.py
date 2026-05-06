@@ -1,4 +1,4 @@
-class plant():
+class Plant():
     def __init__(self, name: str, height: float,
                  age: int, status: str) -> None:
         self._name = name
@@ -11,7 +11,7 @@ class plant():
         print(f"{self._name}: {self._height}cm, {self._age} days old")
 
 
-class flower(plant):
+class Flower(Plant):
     def __init__(self, name: str, height: float, age: int, color: str) -> None:
         super().__init__(name, height, age, "Flower")
         self.__color = color
@@ -28,7 +28,7 @@ class flower(plant):
         print(f"{self._name} is blooming beautifully!")
 
 
-class tree(plant):
+class Tree(Plant):
     def __init__(self, name: str, height: float, age: int,
                  trunk_diameter: float) -> None:
         super().__init__(name, height, age, "Tree")
@@ -43,7 +43,7 @@ class tree(plant):
             )
 
 
-class vegetable(plant):
+class Vegetable(Plant):
     def __init__(self, name: str, height: float, age: int,
                  harvest_season: str, nutritional_value: int) -> None:
         super().__init__(name, height, age, "Vegetable")
@@ -65,15 +65,15 @@ class vegetable(plant):
 if __name__ == "__main__":
     print("=== Garden Plant Types ===")
 
-    first_flower = flower("Rose", 15.0, 10, "red")
+    first_flower = Flower("Rose", 15.0, 10, "red")
     first_flower.show()
     first_flower.bloom()
     first_flower.bloom()
     print("")
-    first_tree = tree("Oak", 200.0, 365, 5.0)
+    first_tree = Tree("Oak", 200.0, 365, 5.0)
     first_tree.show()
     first_tree.produce_shade()
     print("")
-    first_vegetable = vegetable("Tomato", 5.0, 10, "April", 0)
+    first_vegetable = Vegetable("Tomato", 5.0, 10, "April", 0)
     first_vegetable.show()
     first_vegetable.harvest()

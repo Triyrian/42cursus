@@ -1,4 +1,4 @@
-class plant():
+class Plant():
     def __init__(self, name: str, height: float, age: int) -> None:
         self.name = name
         self.height = height
@@ -26,15 +26,13 @@ class plant():
         print(f"Growth this week: {round(self.cumulative, 1)}cm")
 
 
-def input_plant(name: str, height: float, age: int) -> plant:
-    print(f"Created: {name}: {height}cm, {age} days old")
-    return plant(name, height, age)
+def input_plant() -> Plant:
+    name = input("nom de la plante: ")
+    height = int(input("taille de la plante: "))
+    age = int(input("age de la plante: "))
+    return Plant(name, height, age)
 
 
 if __name__ == "__main__":
-    print("=== Plant Factory Output ===")
-    plant1 = input_plant("Rose", 25.0, 30)
-    plant2 = input_plant("Oak", 200.0, 365)
-    plant3 = input_plant("Cactus", 5.0, 90)
-    plant4 = input_plant("Sunflower", 80.0, 45)
-    plant5 = input_plant("Fern", 15.0, 120)
+    plantation = input_plant()
+    plantation.show()
