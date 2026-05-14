@@ -49,8 +49,8 @@ def data_arch() -> None:
             sys.stderr.write("[STDERR] Error opening file "
                              f"'{new_file}': {err}\n")
             print("Data not saved.")
-        else:
-            print("Not saving data.")
+    else:
+        print("Not saving data.")
 
 
 if __name__ == "__main__":
