@@ -41,8 +41,10 @@ class NumericProcessor(DataProcessor):
         if isinstance(data, list):
             for elem in data:
                 self._data.append(str(elem))
+                self.total_processed += 1
         else:
             self._data.append(str(data))
+            self.total_processed += 1
 
 
 class TextProcessor(DataProcessor):
@@ -60,8 +62,10 @@ class TextProcessor(DataProcessor):
         if isinstance(data, list):
             for elem in data:
                 self._data.append(str(elem))
+                self.total_processed += 1
         else:
             self._data.append(str(data))
+            self.total_processed += 1
 
 
 class LogProcessor(DataProcessor):
@@ -93,10 +97,12 @@ class LogProcessor(DataProcessor):
                 self._data.append(
                     f"{x['log_level']}: {x['log_message']}"
                 )
+                self.total_processed += 1
         else:
             self._data.append(
                 f"{data['log_level']}: {data['log_message']}"
             )
+            self.total_processed += 1
 
 
 class DataStream():
