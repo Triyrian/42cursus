@@ -1,4 +1,4 @@
-from alchemy
+import alchemy
 
 
 if __name__ == "__main__":
