@@ -3,11 +3,11 @@ from ex0.CreatureFactory import FlameFactory, AquaFactory, CreatureFactory
 
 def battle(f1: CreatureFactory, f2: CreatureFactory) -> None:
     print("Testing battle")
-    f1 = fire.create_base()
-    f2 = water.create_base()
+    obj1 = f1.create_base()
+    obj2 = f2.create_base()
 
-    print(f"{f1.describe()}\n vs.\n{f2.describe()}\nfight!")
-    print(f"{f1.attack()} \n{f2.attack()}")
+    print(f"{obj1.describe()}\n vs.\n{obj2.describe()}\nfight!")
+    print(f"{obj1.attack()} \n{obj2.attack()}")
 
 
 def test_factory(factory: CreatureFactory) -> None:

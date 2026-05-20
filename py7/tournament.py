@@ -1,11 +1,11 @@
 from ex2.BattleStrategy import NormalStrategy, DefensiveStrategy, \
-    AggressiveStrategy, BattleStrategy
+    AgressiveStrategy, BattleStrategy
 from ex1.CreatureFactory2 import HealingCreatureFactory, \
     TransformCreatureFactory, CreatureFactory
 from ex0.CreatureFactory import FlameFactory, AquaFactory
 
 
-def battle(deck: list[tuple(CreatureFactory, BattleStrategy)]) -> None:
+def battle(deck: list[tuple[CreatureFactory, BattleStrategy]]) -> None:
     print("*** Tournament***")
     print(f"{len(deck)} opponents involved")
 
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     battle(deck1)
 
     print("\nTournament 1 (error)")
-    ag_strat = AggressiveStrategy()
+    ag_strat = AgressiveStrategy()
 
     deck2 = [(fire, ag_strat), (heal, def_strat)]
 

@@ -5,10 +5,11 @@ from ex1.Capability import TransformCapability, HealCapability
 class BattleStrategy(ABC):
 
     @abstractmethod
-    def act(self):
+    def act(self, creature) -> None:
         pass
 
-    def is_valid(self) -> bool:
+    @abstractmethod
+    def is_valid(self, creature) -> bool:
         pass
 
 
